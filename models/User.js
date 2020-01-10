@@ -45,6 +45,11 @@ const userScheme = new Schema({
         id: {
             type: String,
             required: false
+        },
+        imageSrc: {
+            type: String,
+            required: false,
+            default: ''
         }
     },
     { versionKey: false }
