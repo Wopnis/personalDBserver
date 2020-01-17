@@ -2,11 +2,11 @@ const City = require('../models/City');
 const User = require('../models/User');
 const errorHandler = require('../utils/errorHandler');
 
-module.exports.getByCityId = async function (req,res) {
+module.exports.getByCityName = async function (req,res) {
     try {
        const cities = await City.find({
-           city: req.params.cityId,
-           user: req.user.id
+           city: req.params.name,
+           user: User
        });
         res.status(200).json(cities);
     } catch (e) {
@@ -18,8 +18,7 @@ module.exports.create = async function (req,res) {
     try {
         const city = await new City ({
             name: req.body.name,
-            country: req.body.country,
-            user: req.user.id
+            country: req.body.country
         }).save();
         res.status(201).json(city)
     } catch (e) {

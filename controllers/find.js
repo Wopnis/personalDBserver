@@ -36,6 +36,7 @@ module.exports.create = async function (req,res) {
     const password = req.body.password;
     const user = new User ({
         name: req.body.name,
+        department: req.body.department,
         email: req.body.email,
         password: bcrypt.hashSync(password, salt),
         imageSrc: req.file ? req.file.path : ''

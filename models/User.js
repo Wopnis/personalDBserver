@@ -19,9 +19,9 @@ const userScheme = new Schema({
             type: Schema.Types.ObjectId,
             required: false
         },
-        company: {
+        department: {
             type: String,
-            required: false
+            required: true
         },
         email: {
             type: String,

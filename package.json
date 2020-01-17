@@ -4,7 +4,10 @@
   "description": "personal database-server",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "client-install": "npm install --prefix client",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run start\" \"npm run client\" "
   },
   "keywords": [
     "express",
@@ -26,6 +29,7 @@
     "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
+    "concurrently": "^5.0.2",
     "nodemon": "^2.0.2"
   }
 }
